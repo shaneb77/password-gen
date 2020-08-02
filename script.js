@@ -9,7 +9,8 @@ let chars = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g"
 // Assignment code here
 function generatePassword(){
   var length = prompt("How long is your password?")
-  if (length<8||length>123)
+// Conditional statement to check if password length is at least 8 to 128 characters long
+  if (length<8||length>128)
   {
     alert("password must contain 8-123 characters")
     return
@@ -18,11 +19,11 @@ function generatePassword(){
   var lower = confirm("Does your password contain any lowercase letters?")
   var isNumeric = confirm("Does your password contain any numbers?")
   var isSpecialCharacters = confirm("Does your password have any special characters?")
+
+  
   if (upper) {
     var upper = uppercase[Math.floor(Math.random() * uppercase.length)];
     password.push(upper)
-    
-
   }
   if (lower) {
     var lower = lowercase[Math.floor(Math.random() * lowercase.length)];
@@ -32,11 +33,14 @@ function generatePassword(){
     var mynumeric = numeric[Math.floor(Math.random() * numeric.length)];
     password.push(mynumeric)
   }
+
   if (isSpecialCharacters) {
     var myspecialCharacters = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
     password.push(myspecialCharacters)
 
   }
+  
+  
   return password
 }
 
